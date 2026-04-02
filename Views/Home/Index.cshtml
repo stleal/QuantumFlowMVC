@@ -1,121 +1,74 @@
 ﻿@{
-    ViewData["Title"] = "Revenue Operations";
+    ViewData["Title"] = "Sign In";
 }
 
-<section class="home-hero">
+<section class="login-shell">
     <div class="row g-4 align-items-stretch">
-        <div class="col-lg-7">
-            <div class="home-hero__panel">
-                <p class="home-eyebrow">Internal Finance Operations</p>
-                <h1 class="home-title">Track revenue, control spend, and keep leadership aligned on every reporting cycle.</h1>
-                <p class="home-copy">
-                    QuantumFlow gives internal teams a single operating view for expense accountability, revenue tracking, and monthly close preparation.
-                    It is designed for corporate finance, operations, and department leads who need fast visibility without the noise of a customer-facing storefront.
+        <div class="col-lg-6">
+            <section class="login-panel login-panel--brand h-100">
+                <p class="login-panel__eyebrow">Internal Finance Operations</p>
+                <h1 class="login-panel__title">Access QuantumFlow</h1>
+                <p class="login-panel__copy">
+                    Continue into the revenue and expense workspace used by finance, operations, and department leadership.
+                    The same reporting environment is available after authentication, with the current review cycle ready on entry.
                 </p>
-                <div class="home-actions">
-                    <a class="btn home-btn home-btn--primary" asp-controller="Dashboard" asp-action="Index">Open Dashboard</a>
-                    <a class="btn home-btn home-btn--secondary" asp-controller="Home" asp-action="Privacy">Review Data Policy</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-5">
-            <aside class="home-hero__panel home-hero__panel--accent h-100">
-                <p class="home-panel-label">Operational Snapshot</p>
-                <div class="home-metric-grid">
-                    <div class="home-metric-card">
-                        <span class="home-metric-value">4</span>
-                        <span class="home-metric-label">Review cycles tracked</span>
-                    </div>
-                    <div class="home-metric-card">
-                        <span class="home-metric-value">12</span>
-                        <span class="home-metric-label">Departments monitored</span>
-                    </div>
-                    <div class="home-metric-card">
-                        <span class="home-metric-value">1</span>
-                        <span class="home-metric-label">Central source of truth</span>
-                    </div>
-                    <div class="home-metric-card">
-                        <span class="home-metric-value">24h</span>
-                        <span class="home-metric-label">Target variance response time</span>
-                    </div>
-                </div>
-                <div class="home-callout">
-                    <p class="home-callout__title">Built for internal use</p>
-                    <p class="home-callout__text">Use the dashboard to review departmental expense movement, identify revenue gaps, and support close meetings with consistent numbers.</p>
-                </div>
-            </aside>
-        </div>
-    </div>
-</section>
 
-<section class="home-section">
-    <div class="row g-4">
-        <div class="col-md-4">
-            <article class="home-card h-100">
-                <p class="home-card__eyebrow">Revenue Oversight</p>
-                <h2 class="home-card__title">Follow performance against plan</h2>
-                <p class="home-card__copy">Compare actuals against forecasted revenue streams and surface category-level movement before it becomes a quarter-end surprise.</p>
-            </article>
-        </div>
-        <div class="col-md-4">
-            <article class="home-card h-100">
-                <p class="home-card__eyebrow">Expense Accountability</p>
-                <h2 class="home-card__title">Review spend by function and trend</h2>
-                <p class="home-card__copy">Give finance and operations a common view of department expenses, budget drift, and reconciled transactions across the reporting window.</p>
-            </article>
-        </div>
-        <div class="col-md-4">
-            <article class="home-card h-100">
-                <p class="home-card__eyebrow">Audit Readiness</p>
-                <h2 class="home-card__title">Support cleaner internal controls</h2>
-                <p class="home-card__copy">Keep review discussions anchored to a structured data set that can support approvals, variance analysis, and documentation needs.</p>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="home-section">
-    <div class="row g-4 align-items-stretch">
-        <div class="col-lg-7">
-            <div class="home-card home-card--wide h-100">
-                <p class="home-card__eyebrow">How Teams Use QuantumFlow</p>
-                <h2 class="home-card__title">A cleaner operating rhythm for monthly and quarterly reviews</h2>
-                <div class="home-process">
-                    <div class="home-process__item">
-                        <span class="home-process__step">01</span>
-                        <div>
-                            <h3>Aggregate</h3>
-                            <p>Consolidate revenue and expense data into one reporting view for finance and business leaders.</p>
-                        </div>
-                    </div>
-                    <div class="home-process__item">
-                        <span class="home-process__step">02</span>
-                        <div>
-                            <h3>Review</h3>
-                            <p>Spot unusual movement, compare budget against actuals, and prepare the next decision meeting with context.</p>
-                        </div>
-                    </div>
-                    <div class="home-process__item">
-                        <span class="home-process__step">03</span>
-                        <div>
-                            <h3>Act</h3>
-                            <p>Use the dashboard findings to guide approvals, spending controls, and corrective action across departments.</p>
-                        </div>
-                    </div>
+                <div class="login-highlights">
+                    <article class="login-highlight">
+                        <span class="login-highlight__value">12</span>
+                        <span class="login-highlight__label">Department views available after sign-in</span>
+                    </article>
+                    <article class="login-highlight">
+                        <span class="login-highlight__value">24h</span>
+                        <span class="login-highlight__label">Target variance response window</span>
+                    </article>
                 </div>
-            </div>
+
+                <div class="login-support">
+                    <p class="login-support__title">Need access?</p>
+                    <p class="login-support__copy">Contact your QuantumFlow administrator if you need credentials or account recovery support.</p>
+                </div>
+            </section>
         </div>
-        <div class="col-lg-5">
-            <div class="home-card home-card--checklist h-100">
-                <p class="home-card__eyebrow">Internal Value</p>
-                <h2 class="home-card__title">What this system helps your team do</h2>
-                <ul class="home-checklist">
-                    <li>Reduce spreadsheet fragmentation across departments.</li>
-                    <li>Give controllers and managers a shared view of performance.</li>
-                    <li>Accelerate close preparation with clearer variance signals.</li>
-                    <li>Support internal governance with consistent review artifacts.</li>
-                </ul>
-            </div>
+
+        <div class="col-lg-6">
+            <section class="login-panel login-panel--form h-100">
+                <div class="login-panel__header">
+                    <p class="login-panel__eyebrow">Welcome Back</p>
+                    <h2 class="login-form__title">Sign in to continue</h2>
+                    <p class="login-form__subtitle">Enter your internal account details to open the dashboard.</p>
+                </div>
+
+                <form class="login-form" asp-controller="Dashboard" asp-action="Index" method="get">
+                    <div class="login-form__field">
+                        <label class="login-form__label" for="work-email">Work email</label>
+                        <input class="form-control login-form__input" id="work-email" name="email" type="email" placeholder="name@quantumflow.local" autocomplete="email" />
+                    </div>
+
+                    <div class="login-form__field">
+                        <div class="login-form__label-row">
+                            <label class="login-form__label" for="password">Password</label>
+                            <a class="login-form__link" asp-controller="Home" asp-action="Privacy">Forgot password?</a>
+                        </div>
+                        <input class="form-control login-form__input" id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" />
+                    </div>
+
+                    <div class="login-form__row">
+                        <div class="form-check login-form__check">
+                            <input class="form-check-input" type="checkbox" value="true" id="remember-me" name="rememberMe" />
+                            <label class="form-check-label" for="remember-me">Keep me signed in on this device</label>
+                        </div>
+                        <span class="login-form__meta">Protected internal access</span>
+                    </div>
+
+                    <button class="btn home-btn home-btn--primary login-form__submit" type="submit">Sign In</button>
+                </form>
+
+                <div class="login-note">
+                    <p class="login-note__title">Secure session routing</p>
+                    <p class="login-note__copy">After sign-in, you will be taken directly into the operating dashboard for current revenue and expense review.</p>
+                </div>
+            </section>
         </div>
     </div>
 </section>
