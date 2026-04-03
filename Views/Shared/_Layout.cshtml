@@ -26,28 +26,34 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-flex align-items-center">
                     <ul class="navbar-nav gap-sm-2 align-items-sm-center">
-                        <li class="nav-item">
-                            <a class="nav-link app-navbar__link @(currentController == "Dashboard" ? "active" : string.Empty)" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link app-navbar__link @(currentController == "Prompt" ? "active" : string.Empty)" asp-area="" asp-controller="Prompt" asp-action="Index">Prompt</a>
-                        </li>
+                        @if (!isSignedIn)
+                        {
+                            <a class="nav-link app-navbar__link @(currentController == "Login" && currentAction == "Index" ? "active" : string.Empty)" asp-area="" asp-controller="Login" asp-action="Index">Home</a>
+                        }
+                        @if (isSignedIn)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link app-navbar__link @(currentController == "Dashboard" ? "active" : string.Empty)" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                            </li>
+                        }
+                        @if (isSignedIn)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link app-navbar__link @(currentController == "Prompt" ? "active" : string.Empty)" asp-area="" asp-controller="Prompt" asp-action="Index">Prompt</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link app-navbar__link @(currentController == "Login" && currentAction == "About" ? "active" : string.Empty)" asp-area="" asp-controller="Login" asp-action="About">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            @if (isSignedIn)
-                            {
+                        @if (isSignedIn)
+                        {
+                            <li class="nav-item">
                                 <form asp-controller="Login" asp-action="Logout" method="post" class="m-0">
                                     @Html.AntiForgeryToken()
                                     <button type="submit" class="nav-link app-navbar__link border-0 bg-transparent">Logout</button>
                                 </form>
-                            }
-                            else
-                            {
-                                <a class="nav-link app-navbar__link @(currentController == "Login" && currentAction == "Index" ? "active" : string.Empty)" asp-area="" asp-controller="Login" asp-action="Index">Login</a>
-                            }
-                        </li>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
