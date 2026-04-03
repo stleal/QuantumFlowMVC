@@ -27,7 +27,7 @@ public class LoginController : Controller
     {
         if (User.Identity?.IsAuthenticated == true)
         {
-            return RedirectToAction("Index", "Dashboard");
+            return RedirectToAction("Index", "Home");
         }
 
         return View();
@@ -74,7 +74,7 @@ public class LoginController : Controller
         var authProperties = new AuthenticationProperties
         {
             IsPersistent = rememberMe,
-            RedirectUri = Url.Action("Index", "Dashboard")
+            RedirectUri = Url.Action("Index", "Home")
         };
 
         await HttpContext.SignInAsync(
@@ -82,7 +82,7 @@ public class LoginController : Controller
             new ClaimsPrincipal(claimsIdentity),
             authProperties);
 
-        return RedirectToAction("Index", "Dashboard");
+        return RedirectToAction("Index", "Home");
     }
 
     [HttpPost]

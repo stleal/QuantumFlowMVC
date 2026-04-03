@@ -15,11 +15,12 @@
         var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
         var currentAction = ViewContext.RouteData.Values["action"]?.ToString();
         var isSignedIn = User.Identity?.IsAuthenticated == true;
+        var brandController = isSignedIn ? "Home" : "Login";
     }
     <header>
         <nav class="navbar navbar-expand-sm app-navbar mb-4">
             <div class="container-fluid">
-                <a class="navbar-brand app-navbar__brand" asp-area="" asp-controller="Login" asp-action="Index">QuantumFlow</a>
+                <a class="navbar-brand app-navbar__brand" asp-area="" asp-controller="@brandController" asp-action="Index">QuantumFlow</a>
                 <button class="navbar-toggler app-navbar__toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,10 +29,15 @@
                     <ul class="navbar-nav gap-sm-2 align-items-sm-center">
                         @if (!isSignedIn)
                         {
-                            <a class="nav-link app-navbar__link @(currentController == "Login" && currentAction == "Index" ? "active" : string.Empty)" asp-area="" asp-controller="Login" asp-action="Index">Home</a>
+                            <li class="nav-item">
+                                <a class="nav-link app-navbar__link @(currentController == "Login" && currentAction == "Index" ? "active" : string.Empty)" asp-area="" asp-controller="Login" asp-action="Index">Home</a>
+                            </li>
                         }
                         @if (isSignedIn)
                         {
+                            <li class="nav-item">
+                                <a class="nav-link app-navbar__link @(currentController == "Home" ? "active" : string.Empty)" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link app-navbar__link @(currentController == "Dashboard" ? "active" : string.Empty)" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
                             </li>
